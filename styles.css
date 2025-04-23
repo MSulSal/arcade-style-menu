@@ -27,7 +27,6 @@ body {
 .menu-list {
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease-out;
 }
 .menu-item {
   height: var(--item-height);
@@ -45,9 +44,7 @@ body {
   font-size: 2rem;
   margin: 1rem 0;
   color: #fff;
-  cursor: pointer;
   user-select: none;
-  animation: blinker 1s step-start infinite;
 }
 .arrow-up::before {
   content: "▲";
