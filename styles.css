@@ -1,6 +1,5 @@
 :root {
   --item-height: 2.5rem;
-  --visible-count: 3;
 }
 html,
 body {
@@ -19,7 +18,7 @@ body {
   user-select: none;
 }
 .menu-window {
-  height: calc(var(--item-height) * var(--visible-count));
+  height: calc(var(--item-height) * 3);
   overflow: hidden;
   width: 100%;
   max-width: 20rem;
