@@ -41,30 +41,24 @@ function step(delta) {
 }
 const intervalDelay = 600;
 let upInterval, downInterval;
-upArrow.addEventListener("pointerenter", () => {
+upArrow.addEventListener("mouseenter", () => {
   upInterval = setInterval(() => step(-1), intervalDelay);
 });
-upArrow.addEventListener("pointerleave", () => {
-  clearInterval(upInterval);
-});
+upArrow.addEventListener("mouseleave", () => clearInterval(upInterval));
 upArrow.addEventListener("pointerdown", () => {
   upInterval = setInterval(() => step(-1), intervalDelay);
 });
-upArrow.addEventListener("pointerup", () => {
-  clearInterval(upInterval);
-});
-downArrow.addEventListener("pointerenter", () => {
+upArrow.addEventListener("pointerup", () => clearInterval(upInterval));
+upArrow.addEventListener("pointercancel", () => clearInterval(upInterval));
+downArrow.addEventListener("mouseenter", () => {
   downInterval = setInterval(() => step(1), intervalDelay);
 });
-downArrow.addEventListener("pointerleave", () => {
-  clearInterval(downInterval);
-});
+downArrow.addEventListener("mouseleave", () => clearInterval(downInterval));
 downArrow.addEventListener("pointerdown", () => {
   downInterval = setInterval(() => step(1), intervalDelay);
 });
-downArrow.addEventListener("pointerup", () => {
-  clearInterval(downInterval);
-});
+downArrow.addEventListener("pointerup", () => clearInterval(downInterval));
+downArrow.addEventListener("pointercancel", () => clearInterval(downInterval));
 document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowUp") step(-1);
   if (e.key === "ArrowDown") step(1);
