@@ -1,0 +1,62 @@
+:root {
+  --item-height: 2.5rem;
+  --visible-count: 3;
+}
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+}
+.menu-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Press Start 2P", monospace;
+  user-select: none;
+}
+.menu-window {
+  height: calc(var(--item-height) * var(--visible-count));
+  overflow: hidden;
+  width: 100%;
+  max-width: 20rem;
+}
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-out;
+}
+.menu-item {
+  height: var(--item-height);
+  line-height: var(--item-height);
+  text-align: center;
+  color: #555;
+  text-shadow: 2px 2px 0 #000;
+  font-size: 1rem;
+}
+.menu-item.active {
+  color: #00f;
+  animation: blinker 1s step-start infinite;
+}
+.arrow {
+  font-size: 2rem;
+  margin: 1rem 0;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  animation: blinker 1s step-start infinite;
+}
+.arrow-up::before {
+  content: "▲";
+}
+.arrow-down::before {
+  content: "▼";
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
